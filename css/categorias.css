@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+}
+.titles{
+  font-size: 1.4em;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border-radius: 60%;
+  border: solid 2px white;
+}
+
+@media  (min-width: 1000px){
+  body{
+    max-width: 1200px;
+  }
+img{
+  width: 40%;
+}
+
+h2{
+  margin-top: 20px;
+  font-size: 3em;
+}
+p{
+  font-size: 1.5em;
+}

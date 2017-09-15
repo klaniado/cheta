@@ -1,0 +1,28 @@
+*{
+  box-sizing: border-box;
+}
+
+
+img{
+  width: 100%;
+}
+
+p{
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+
+h2{
+margin-bottom: 15px;
+margin-top: 30px;
+}
+
+
+
+@media  (min-width: 1000px){
+  body{
+    max-width: 1200px;
+  }
+img{
+  width: 40%;
+}

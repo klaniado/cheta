@@ -1,0 +1,30 @@
+img{
+  width: 100%;
+}
+
+h2{
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+p{
+margin-top: 50px;
+margin-bottom: 15px;
+}
+
+
+@media  (min-width: 1000px){
+  body{
+    max-width: 1200px;
+  }
+img{
+  width: 40%;
+}
+
+h2{
+  margin-top: 20px;
+  font-size: 3em;
+}
+p{
+  font-size: 2em;
+}
