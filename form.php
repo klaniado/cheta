@@ -1,34 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/form.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>Registro</title>
-  </head>
+<?php
+$title="Registro";
+require_once("./head.php");
+?>
   <body>
     <div class="container">
-      <?php include "header.php" ?><br><br><br>
+      <?php include("header.php")?>
       <div class="medio">
         <h1>Formulario de registro</h1>
-          <form class="registro" action="validacion.php" method="post">
-            <br><br>
-              <input type="text" name="nombre" value="" size="15"  placeholder="Diego" required>
-                <br><br>
-              <input type="text" name="apellido" value=""  placeholder="Perez" required>
-                <br><br>
-              <input type="email" name="mail" value="" placeholder="algo@otroalgo.com" required>
-                <br><br>
-              <input type="password" name="contraseña" value="" placeholder="Contraseña" formenctype="multipart/form-data" required>
-              <br><br>
-              <input class="sexo" type="radio" name="sexo"  value="masculino" checked><h3 class="sex">Masculino</h3> <br><br>
-              <input class="sexo" type="radio" name="sexo" value="femenino"> <h3 class="sex">Femenino</h3> <br><br>
-              <input class="sexo" type="radio" name="sexo" value="otro"> <h3 class="sex">Otro</h3> <br><br><br>
-              <input type="date" name="nacio" value="Fecha de nacimiento" placeholder="DD/MM/AAAA">
-                <br><br>
-              <input  type="tel" name="telefono" value="" placeholder="11 3283 5768">
-              <br><br>
+          <form  action="validacion.php" method="post">
+            <br>
+              <label for="">Nombre</label><br>
+              <input type="text" name="nombre" value="" size="15"  placeholder="Diego" required><br>
+              <label for="">Apellido</label><br>
+              <input type="text" name="apellido" value=""  placeholder="Perez" required><br>
+              <label for="">E-mail</label><br>
+              <input type="email" name="mail" value="" placeholder="algo@otroalgo.com" required><br>
+              <label for="">Contraseña</label><br>
+              <input type="password" name="contraseña" value="" placeholder="Contraseña" formenctype="multipart/form-data" required><br><br>
+              <div class="sexo">
+              <input  type="radio" name="sexo"  value="masculino" checked><br>
+              <label for="">Masculino</label><br>
+              </div>
+              <div class="sexo">
+              <input class="sexo" type="radio" name="sexo" value="femenino"><br>
+              <label for="">Femenino</label>
+              </div><br><br>
+              <label for="">Fecha de nacimiento</label><br>
+              <input type="date" name="nacio" value="Fecha de nacimiento" placeholder="DD/MM/AAAA"><br>
+              <label for="">Telefono</label><br>
+              <input  type="tel" name="telefono" value="" placeholder="11 3283 5768"><br>
+              <label for="">Nacionalidad</label><br>
               <select name="country" class="paises">
                         <option value="">Seleccione...</option>
                         <option value="AF">Afghanistan</option>
@@ -285,9 +286,7 @@
             <textarea class="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
               <br><br><br><br>
             <button class="enviar" type="submit">Enviar</button>
-          </div>
-            <?php include("./pregfrec.php") ?>
-              </div>
+
           </div>
             <?php include("./footer.php") ?>
               </div>

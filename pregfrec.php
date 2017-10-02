@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/pregfrec.css">
-    <title>Preguntas Frecuentes</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="medio" id="pregfrec">
+
+
+
                     <br><br><br>
-            <strong><h2 class="title"><a class="title"href="#pregfrec">Preguntas Frecuentes</a></h2></strong><br><br><br>
-          <ol type="1">
-            <li><i class="pregs">¿Como realizo mi compra?</i></li><br>
+            <strong><h2 class="title"><a class="title"href="">Preguntas Frecuentes</a></h2></strong><br><br><br>
+          <ol >
+            <li><input type="checkbox" id="checkpreg" value="">
+              <label for="checkpreg"><i class="pregs">¿Como realizo mi compra?</i></label></li><br>
                 <p>  Ingresá en <a href="index.php">www.cheetatechs.com.ar </a> registrate o comprá como invitado. Te recomendamos registrarte ya que accedés a Múltiples beneficios como poder ver online el estado de tu pedido y tener tu historial de compra entre otros.
                 Luego seleccioná la opción COMPRA ONLINE para poder navegar en nuestro catálogo de productos y realizar tus compras de manera rápida, fácil y simple.</p><br>
             <li><i class="pregs">¿Cómo hago para modificar mis datos?</i></li><br>
@@ -38,8 +31,3 @@
             <li><i class="pregs">¿Los productos tienen garantia?</i></li><br>
                 <p> Todos nuestros productos cuentan con una garantia del fabricante de 6 meses. Ademas nosotros otorgamos 3 dias de prueba y 30 dias para cambios por cualquier inconveniente.  </p>
           </ol>
-        </div>
-
-    </div>
-  </body>
-</html>

@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-      <link rel="stylesheet" href="css/ipad.css">
-    <title>Ipads</title>
-  </head>
+<?php
+  $title="Ipads";
+  require_once("head.php");
+?>
+
   <body>
-    <?php
-    include("./header.php");
-    ?>
+    <div class="container">
+      <?php include "header.php" ?><br><br><br>
+    <h1>Ipads</h1>
     <section>
 
       <article class="producto">
@@ -33,11 +31,10 @@
       </article>
 
     </section>
-    <?php
-    include("./pregfrec.php");
-    ?>
+
     <?php
     include("./footer.php");
      ?>
+   </div>
   </body>
 </html>

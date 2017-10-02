@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-      <link rel="stylesheet" href="css/iphone.css">
-    <title>Iphones</title>
-  </head>
+<?php
+  $title="Iphones";
+  require_once("head.php");
+?>
+
   <body>
-    <?php
-    include("./header.php");
-    ?>
+    <div class="container">
+      <?php include "header.php" ?><br><br><br>
+    <h1>Iphones</h1>
     <section>
 
     <article class="producto">
@@ -38,10 +36,8 @@
     </section>
 
     <?php
-    include("./pregfrec.php");
-    ?>
-    <?php
     include("./footer.php");
      ?>
+   </div>
   </body>
 </html>
