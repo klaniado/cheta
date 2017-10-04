@@ -10,13 +10,13 @@ require_once("./head.php");
           <form  action="validacion.php" method="post">
             <br>
               <label for="">Nombre</label><br>
-              <input type="text" name="nombre" value="" size="15"  placeholder="Diego" required><br>
+              <input type="text" name="nombre" value="" size="15"  placeholder=" Diego" required><br>
               <label for="">Apellido</label><br>
-              <input type="text" name="apellido" value=""  placeholder="Perez" required><br>
+              <input type="text" name="apellido" value=""  placeholder=" Perez" required><br>
               <label for="">E-mail</label><br>
-              <input type="email" name="mail" value="" placeholder="algo@otroalgo.com" required><br>
+              <input type="email" name="mail" value="" placeholder=" algo@otroalgo.com" required><br>
               <label for="">Contraseña</label><br>
-              <input type="password" name="contraseña" value="" placeholder="Contraseña" formenctype="multipart/form-data" required><br><br>
+              <input type="password" name="contraseña" value="" placeholder=" Contraseña" formenctype="multipart/form-data" required><br><br>
               <div class="sexo">
               <input  type="radio" name="sexo"  value="masculino" checked><br>
               <label for="">Masculino</label><br>
@@ -26,9 +26,9 @@ require_once("./head.php");
               <label for="">Femenino</label>
               </div><br><br>
               <label for="">Fecha de nacimiento</label><br>
-              <input type="date" name="nacio" value="Fecha de nacimiento" placeholder="DD/MM/AAAA"><br>
+              <input type="date" name="nacio" value="Fecha de nacimiento" placeholder=" DD/MM/AAAA"><br>
               <label for="">Telefono</label><br>
-              <input  type="tel" name="telefono" value="" placeholder="11 3283 5768"><br>
+              <input  type="tel" name="telefono" value="" placeholder=" 11 3283 5768"><br>
               <label for="">Nacionalidad</label><br>
               <select name="country" class="paises">
                         <option value="">Seleccione...</option>

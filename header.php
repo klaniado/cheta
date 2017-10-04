@@ -2,7 +2,7 @@
     <header>
       <div class="header">
         <a id="logo" href="index.php"><img id="logoimg" src="images/logo_header.png" alt=""></a>
-        <input id="buscador" type="search" name="search" placeholder="¿Qué estas buscando?" value="">
+        <input id="buscador" type="search" name="search" placeholder="  ¿Qué estas buscando?" value="">
         <button id="send" type="submit" name="send"><i id="lupa" class="fa fa-search" aria-hidden="true"></i></button>
       </div>
       <div class="menu">

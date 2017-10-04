@@ -8,7 +8,7 @@ require_once("./head.php");
           <?php include("./header.php") ?>
 
       <div class="medio">
-        <h1 class="title">Ingresar</h1><br><br>
+        <h1>Ingresar</h1><br><br>
         <form  action="validacion.php" method="post">
           <label for="">E-mail</label><br>
           <input type="email" name="user" value=""placeholder="  E-mail"><br><br>

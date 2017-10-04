@@ -10,9 +10,9 @@
         <div class="medio">
 
             <h2>Recuperar contraseña</h2>
-
+            <form>
               <label for="email">Email: </label><br>
-              <input type="text" name="email" id="email" value=""><br><br>
+              <input type="email" name="email" id="email" value=""><br><br>
               <button class="enviar" type="submit" name="button">Enviar</button>
             </form>
 
