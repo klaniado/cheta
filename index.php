@@ -19,7 +19,9 @@
     </section>
 <section>
   <article class="hindex">
-  <br><br>
+    <br><br>
+      <img src="images/bannerHome.jpg" alt="">
+    <br><br>
       <strong><h1>Lo Más Nuevo</h1></strong>
   </article>
   <article>

@@ -212,6 +212,12 @@ h2{
   color: rgb(255, 138, 0);
   text-decoration: none;
 }
+.hindex img{
+  width: 90%;
+  box-shadow: 0 0 0 10px rgba(252, 136, 0, 0.77),
+              0 25px 50px;
+  border-radius: 20px;
+}
           /**************IMAGENES CATEGORIAS************/
 article{
   text-align: center;
@@ -476,7 +482,7 @@ footer a:hover{
 }
 @media (min-width: 1288px){
 
-  
+
   .menu-nav li .menu-pregfre{
     font-size: 1.31em;
   }
