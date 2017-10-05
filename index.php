@@ -11,7 +11,7 @@
   <section class="box-slider">
     <div class="slider">
               <ul>
-                  <li><img src="images/responsive-banner.jpg" class="banner" alt="banner"></li>
+                  <li><img src="images/responsive-banner.jpg"  alt=""></li>
                   <li><img src="images/BANNER.png" alt=""></li>
                   <li><img src="images/apple-banner.png" alt=""></li>
               </ul>

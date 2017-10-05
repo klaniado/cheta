@@ -169,7 +169,7 @@ h2{
 .slider img{
     margin:0;
     margin-bottom: 0px;
-    width: 100%;
+    width: 90%;
     height: 405px;
 }
 @keyframes cambio {
@@ -177,7 +177,7 @@ h2{
     35%{margin-left: -13%;}
 
     40%{margin-left: -113.5%;}
-    75%{margin-left: -113.5%}
+    75%{margin-left: -113.5%;}
 
     80%{margin-left: -213%;}
     100%{margin-left: -213%}
@@ -350,29 +350,29 @@ footer li .home , .faqs{
 footer a:hover{
   color:#000;
 }
-@media (min-width: 360px){ /******MEDIA QUERY MOBILE S*******/
+@media (min-width: 320px){ /******MEDIA QUERY MOBILE S*******/
   /*********SLIDER*********/
   @keyframes cambio {
-      0%{margin-left: -12%;}
-      35%{margin-left: -12%;}
+      0%{margin-left: 3%;}
+      35%{margin-left: 3%;}
 
-      40%{margin-left: -111.8%;}
-      75%{margin-left: -111.8%}
+      40%{margin-left: -102%;}
+      75%{margin-left: -102%;}
 
-      80%{margin-left: -212.5%;}
-      100%{margin-left: -212.5%}
+      80%{margin-left: -205%;}
+      100%{margin-left: -205%}
   }
 @media (min-width: 425px){    /******MEDIA QUERY MOBILE l*******/
   /*********SLIDER*********/
   @keyframes cambio {
-      0%{margin-left: -9.7%;}
-      35%{margin-left: -9.7%;}
+      0%{margin-left: 3%;}
+      35%{margin-left: 3%;}
 
-      40%{margin-left: -111.3%;}
-      75%{margin-left: -111.3%}
+      40%{margin-left: -102%;}
+      75%{margin-left: -102%}
 
-      80%{margin-left: -212.5%;}
-      100%{margin-left: -212.5%}
+      80%{margin-left: -205%;}
+      100%{margin-left: -205%}
   }
   footer a{
     padding: 7% 10%;
@@ -384,16 +384,7 @@ footer a:hover{
 }
 @media (min-width: 555px){   /******MEDIA QUERY MOBILE XL*******/
   /*********SLIDER*********/
-  @keyframes cambio {
-      0%{margin-left: -7%;}
-      35%{margin-left: -7%;}
 
-      40%{margin-left: -109.5%;}
-      75%{margin-left: -109.5%}
-
-      80%{margin-left: -212.5%;}
-      100%{margin-left: -212.5%}
-  }
   footer a{
     padding: 4% 10%;
     font-size: 0.8em;
@@ -405,14 +396,14 @@ footer a:hover{
 @media (min-width: 760px){  /******MEDIA QUERY TABLET*******/
   /*********SLIDER*********/
   @keyframes cambio {
-      0%{margin-left: -7%;}
-      35%{margin-left: -7%;}
+      0%{margin-left: -2%;}
+      35%{margin-left: -2%;}
 
-      40%{margin-left: -109%;}
-      75%{margin-left: -109%}
+      40%{margin-left: -106%;}
+      75%{margin-left: -106%}
 
-      80%{margin-left: -212.5%;}
-      100%{margin-left: -212.5%}
+      80%{margin-left: -211%;}
+      100%{margin-left: -211%}
   }
   section{
     text-align: center;
@@ -462,16 +453,7 @@ footer a:hover{
   .slider img{
     width: 95%;
   }
-  @keyframes cambio {
-      0%{margin-left: -6%;}
-      35%{margin-left: -6%;}
 
-      40%{margin-left: -108.8%;}
-      75%{margin-left: -108.8%}
-
-      80%{margin-left: -211.8%;}
-      100%{margin-left: -211.8%}
-  }
   /************IMAGNES PRODUCTOS*********/
   article{
     width: 30%;
@@ -494,16 +476,7 @@ footer a:hover{
 }
 @media (min-width: 1288px){
 
-  @keyframes cambio {
-      0%{margin-left: -5%;}
-      35%{margin-left: -5%;}
-
-      40%{margin-left: -108%;}
-      75%{margin-left: -108%}
-
-      80%{margin-left: -211.2%;}
-      100%{margin-left: -211.2%}
-  }
+  
   .menu-nav li .menu-pregfre{
     font-size: 1.31em;
   }
