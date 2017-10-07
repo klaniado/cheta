@@ -3,7 +3,7 @@
 <?php
   require_once("funciones.php");
   if(!estaLogueado()) {
-    header("location:login.php");exit;
+    header("location:login0.php");exit;
   }
   $id = $_GET["id"];
   $usuario = buscarPorId($id);

@@ -52,7 +52,7 @@
         <h6 class="botones"><a href="olvide.php">Olvide mi contraseña</a></h6>
       </form>
     <br>
-    No estas registrado?<a href="test.php"> Registrate ! </a>
+    No estas registrado?<a href="form.php"> Registrate ! </a>
     </div>
 
     <?php require_once("./footer.php") ?>
