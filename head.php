@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <script src="jquery/jquery-3.2.1.min.js"></script>
-
+    <?php require_once("funciones.php"); ?>
     <title><?php echo $title ?></title>
   </head>

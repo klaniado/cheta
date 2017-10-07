@@ -1,9 +1,10 @@
 <?php
   $title="Inicio";
-  require_once("head.php");
 ?>
-
+<?php require_once("./head.php") ?>
   <body>
+
+
     <div class="container">
 
           <?php include("./header.php") ?>
@@ -19,9 +20,7 @@
     </section>
 <section>
   <article class="hindex">
-    <br><br>
-      <img src="images/bannerHome.jpg" alt="">
-    <br><br>
+  <br><br>
       <strong><h1>Lo Más Nuevo</h1></strong>
   </article>
   <article>
@@ -35,6 +34,7 @@
   </article>
 </section>
 <br><br><br>
+<h6 class="botones"><a href="deslogueo.php">Cerrar sesion</a></h6><br><br><br>
 <div class="medio">
       <!-- <?php include("./pregfrec.php") ?> -->
     </div>
