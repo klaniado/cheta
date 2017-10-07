@@ -6,9 +6,7 @@
   require_once("funciones.php");
 ?>
 <?php
-      if(estaLogueado()) {
-        header("location:index.php");exit;
-      }
+      
     $nombre = "";
     $apellido = "";
     $usuario = "";
@@ -347,7 +345,7 @@ $pais="";
               </select>
               <br><br><br><br>
             <button class="enviar" type="submit">Enviar</button>
-          
+
           </div>
             <?php include("./footer.php") ?>
               </div>
