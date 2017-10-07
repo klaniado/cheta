@@ -2,9 +2,7 @@
 
 <?php
   require_once("funciones.php");
-  if(!estaLogueado()) {
-    header("location:login0.php");exit;
-  }
+
   $id = $_GET["id"];
   $usuario = buscarPorId($id);
   $file = glob('images/'.$usuario["usuario"].'.*');
