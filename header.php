@@ -9,42 +9,42 @@
       <label for="menu"><i id="lmen" class="fa fa-list" aria-hidden="true">Menú</i></label>
       <input id="menu" type="checkbox" name="" value="">
       <nav class="menu-nav">
-          <li >
-            <a  href="index.php">
+            <a   href="index.php">
+            <li class="headerli">
               <i class="fa fa-home"></i>
-              Home
+              <h6 class="h6header">Home</h6>
+              </li>
             </a>
-          </li>
-          <li >
-            <a  href="categorias.php">
+            <a   href="categorias.php">
+          <li class="headerli">
               <i class="fa fa-bars" aria-hidden="true"></i>
-              Categorías
-            </a>
+              <h6 class="h6header">Categorías</h6>
           </li>
-          <li >
-            <a  href="productos.php">
+        </a>
+            <a   href="productos.php">
+              <li class="headerli">
               <i class="fa fa-mobile" aria-hidden="true"></i>
-             Productos
+             <h6 class="h6header">Productos</h6>
+           </li>
             </a>
-          </li>
-          <li >
-            <a  href="login0.php">
+            <a   href="login0.php">
+              <li class="headerli">
               <i class="fa fa-user-circle" aria-hidden="true"></i>
-              Cuenta
+              <h6 class="h6header">Cuenta</h6>
+            </li>
             </a>
-          </li>
-          <li >
-            <a  href="contacto.php">
+            <a   href="contacto.php">
+              <li class="headerli">
               <i class="fa fa-phone" aria-hidden="true"></i>
-              Contacto
+              <h6 class="h6header">Contacto</h6>
+            </li>
             </a>
-          </li>
-          <li >
-            <a class="menu-pregfre" href="indexpregfrec.php">
+            <a  class="menu-pregfre" href="indexpregfrec.php">
+              <li class="headerli">
               <i class="fa fa-question-circle" aria-hidden="true"></i>
-              Preguntas Frecuentes
+                <h6 class="h6header">FAQs</h6>
+            </li>
             </a>
-          </li>
       </nav>
     </div>
     </header>
