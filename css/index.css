@@ -1,5 +1,4 @@
 *{
-  padding: 0;
   box-sizing: border-box;
   border: 0;
   text-decoration: none;
@@ -11,7 +10,6 @@ body{
   font-family: sans-serif;
   background-image: url("../images/fondo.jpg");
 }
-
 .container{
 
   margin: 0;
@@ -89,7 +87,23 @@ body{
   background-color: #fff;
 
 }
-.menu-nav li{
+.headerli{
+  height: 46px;
+  border-radius: 20px;
+}
+.menu-nav li:hover{
+  background-color: rgb(71, 231, 6);
+}
+.h6header{
+  display: inline-block;
+  margin-top: -30px;
+  font-size: 1.4em;
+  padding: 40px 10px;
+}
+.menu-nav a{
+  display: inline-block;
+  color: #fff;
+  margin-top: 5px;
   list-style: none;
   align-items: center;
   width: 100%;
@@ -99,17 +113,8 @@ body{
   border-radius: 20px;
 
 }
-.menu-nav li:hover{
-  background-color: rgb(71, 231, 6);
-}
-.menu-nav a{
-  display: inline-block;
-  font-size: 2em;
-  color: #fff;
-
-  padding: 0 10%;
-  margin-top: 5px;
-
+.menu-nav i{
+    font-size: 1.4em;
 }
 .menu-nav .menu-pregfre{
   margin-top: 7px;
