@@ -109,7 +109,7 @@ body{
   height: 50px;
   background-color: rgb(249, 142, 0);
   border: 2px solid #fff;
-  border-radius: 20px;
+  border-radius: 21px;
 
 }
 .menu-nav i{
@@ -140,7 +140,6 @@ h2{
   text-align: center;
   color: rgb(244, 205, 0);
   text-decoration-style: solid;
-
   font-size: 2em;
 }
 
