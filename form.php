@@ -25,8 +25,12 @@ if ($_POST) {
     $errores=validarInfo($_POST);
 
     if (count($errores) == 0) {
-      $usuarioArray = crearUsuario($_POST);
-      guardarUsuario($usuarioArray);
+      $errores = guardarImagen("imgPerfil",$errores);
+      if (count($errores) == 0) {
+        $usuarioArray = crearUsuario($_POST);
+        guardarUsuario($usuarioArray);
+
+      }
   }
 }
 ?>

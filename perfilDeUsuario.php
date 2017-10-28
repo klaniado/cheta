@@ -2,14 +2,14 @@
 
 <?php
   require_once("./functions.php");
-  if(!estaLogueado()) {
-    header("location:login.php");exit;
-  }
+  // if(!estaLogueado()) {
+  //   header("location:login.php");exit;
+  // }
   $id = $_GET["id"];
   $usuario = buscarPorId($id);
-  // $file = glob('images/'.$usuario["usuario"].'.*');
+  $file = glob('images/'.$usuario["nombre"]. $usuario["apellido"]. '.*');
 
-  // $file = $file[0];
+  $file = $file[0];
 
 
 ?>
