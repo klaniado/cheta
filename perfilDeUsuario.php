@@ -1,19 +1,17 @@
-<?php $title="Perfil de usuario"; ?>
-
 <?php
-  require_once("./functions.php");
-  // if(!estaLogueado()) {
-  //   header("location:login.php");exit;
-  // }
+  $title="Perfil de usuario";
+  require_once("./head.php");
+
+  if(!estaLogueado()) {
+    header("location:index.php");exit;
+  }
   $id = $_GET["id"];
   $usuario = buscarPorId($id);
   $file = glob('images/'.$usuario["nombre"]. $usuario["apellido"]. '.*');
 
   $file = $file[0];
 
-
 ?>
-<?php require_once("./head.php"); ?>
   <body>
 
     <?php require_once("./header.php"); ?>

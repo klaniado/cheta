@@ -3,26 +3,31 @@
 <?php require_once("./header.php"); ?>
 <?php
 
-// if (estaLogueado()) {
-//   header("location:index.php");exit;
-// }
-
 $errores= [];
 
 if ($_POST) {
   $errores = validarLogin($_POST);
-}
-if(empty($errores)) {
-  $usuario = buscarPorMail($_POST["mail"]);
-  loguear($usuario);
 
-  if (isset($_POST["recordame"])) {
-    setcookie("idUser", $usuario["id"], time() + 60 * 60 * 24 * 30);
+  if(empty($errores)) {
+    $usuario = buscarPorMail($_POST["mail"]);
+    loguear($usuario);
+
+    $id = $usuario["id"];
+
+    if (isset($_POST["recordame"])) {
+      setcookie("idUser", $usuario["id"], time() + 60 * 60 * 24 * 30);
+    }
+
+      header("location:perfilDeUsuario.php?id=" . $id);exit;
+
   }
-
-  header("location:perfilDeUsuario.php?id=" .usuarioLogueado());exit;
-
 }
+
+if (estaLogueado()) {
+    header("location:perfilDeUsuario.php?id=" . $_SESSION["idUser"]);exit;
+}
+
+
 
 
 ?>
