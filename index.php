@@ -34,7 +34,9 @@
   </article>
 </section>
 <br><br><br>
+<?php if (isset($_SESSION["idUser"])) { ?>
 <h6 class="botones"><a href="deslogueo.php">Cerrar sesion</a></h6><br><br><br>
+<?php } ?>
 <div class="medio">
       <!-- <?php include("./pregfrec.php") ?> -->
     </div>

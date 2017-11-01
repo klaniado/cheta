@@ -1,17 +1,17 @@
-<?php $title="Perfil de usuario"; ?>
-
 <?php
-  require_once("funciones.php");
+  $title="Perfil de usuario";
+  require_once("./head.php");
 
+  if(!estaLogueado()) {
+    header("location:index.php");exit;
+  }
   $id = $_GET["id"];
   $usuario = buscarPorId($id);
-  $file = glob('images/'.$usuario["usuario"].'.*');
+  $file = glob('images/'.$usuario["nombre"]. $usuario["apellido"]. '.*');
 
   $file = $file[0];
 
-
 ?>
-<?php require_once("./head.php"); ?>
   <body>
 
     <?php require_once("./header.php"); ?>
@@ -20,7 +20,7 @@
       <h1>Bienvenido al perfil de <?=$usuario["nombre"]?></h1>
       <ul><pre>
         <?php foreach($usuario as $propiedad => $valor) { ?>
-          <?php if ($propiedad != "id" && $propiedad != "password") { ?>
+          <?php if ($propiedad != "id" && $propiedad != "pass") { ?>
             <li>
               <?=$propiedad?>: <?=$valor?>
             </li>
