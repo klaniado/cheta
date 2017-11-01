@@ -43,7 +43,7 @@
         </div><br><br>
         <div class="">
 
-          <input type="checkbox" class="" name="recordame" checked><label for="">Recordarme</label>
+          <input type="checkbox" class="recordarme" name="recordame" checked><label for="">Recordarme</label>
         </div>
         <div class="">
           <input type="submit" name=""class="enviar" value="Login">
@@ -52,7 +52,7 @@
         <h6 class="botones"><a href="olvide.php">Olvide mi contraseña</a></h6>
       </form>
     <br>
-    No estas registrado?<a href="form.php"> Registrate ! </a>
+   
     </div>
 
     <?php require_once("./footer.php") ?>
