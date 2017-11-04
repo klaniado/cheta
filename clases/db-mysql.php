@@ -99,10 +99,10 @@ private $conn;
 
       $query->execute();
     }
-  }
 
-  ?>
-
+public function crearBase(){
+  $mysql = "CREATE TABLE `cheta`.`usuarios` ( `id` INT NULL DEFAULT NULL AUTO_INCREMENT , `nombre` VARCHAR(30) NOT NULL , `apellido` VARCHAR(30) NOT NULL , `mail` VARCHAR(50) NOT NULL , `contraseña` VARCHAR(1000) NOT NULL , `edad` INT(100) NOT NULL , `pais` VARCHAR(100) NOT NULL , PRIMARY KEY (`id`), UNIQUE (`apellido`), UNIQUE (`mail`), UNIQUE (`contraseña`)) ENGINE = InnoDB;"
+}
 
 
 
