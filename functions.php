@@ -1,38 +1,5 @@
 <?php
 
-function traerTodos() {
-  $archivo = file_get_contents("usuario.json");
-  $usuariosJSON = explode(PHP_EOL, $archivo);
-  array_pop($usuariosJSON);
-  $usuariosFinal = [];
-foreach($usuariosJSON as $json) {
-    $usuariosFinal[] = json_decode($json, true);
-  }
-  return $usuariosFinal;
-}
-function nuevoId(){
-  $usuarios=traerTodos();
-if (count($usuarios) == 0) {
-    return 1;
-  }
-  $elUltimo = array_pop($usuarios);
-  $id = $elUltimo["id"];
-  return $id + 1;
-}
-function crearUsuario($algo){
-  $usuario=[
-
-    "nombre" =>$algo["nombre"],
-    "apellido" =>$algo["apellido"],
-    "edad" =>$algo["edad"],
-    "pass" =>password_hash($algo["pass"],PASSWORD_DEFAULT),
-    "mail" =>$algo["mail"],
-    "pais"=>$algo["pais"]
-  ];
-  $usuario["id"]=nuevoId();
-  return $usuario;
-}
-
   function guardarImagen($unaImagen, $errores) {
 		if ($_FILES[$unaImagen]["error"] == UPLOAD_ERR_OK)
 		{
@@ -77,13 +44,5 @@ function buscarPorId($id){
     }
     return false;
   }
-  function loguear($usuario) {
-    $_SESSION["idUser"] = $usuario["id"];
-  }
-  function estaLogueado() {
-    return isset($_SESSION["idUser"]);
-  }
-  function usuarioLogueado() {
-    return buscarPorId($_SESSION["idUser"]);
-  }
+
 ?>
