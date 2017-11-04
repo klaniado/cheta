@@ -11,7 +11,7 @@ class Usuario  {
   protected $pais;
 
   function __constructor($nombre,$apellido,$mail,$edad,$pais,$id = null){
-    if ($id = null) {
+    if ($id == null) {
         $this->password = password_hash($password, PASSWORD_DEFAULT);
     }    else {
           $this->password = $password;
@@ -81,11 +81,31 @@ class Usuario  {
         "edad" => $this->edad
       ];
     }
-
+    public function traerTodos() {
+        $archivo = file_get_contents("usuario.json");
+        $usuariosJSON = explode(PHP_EOL, $archivo);
+        array_pop($usuariosJSON);
+        $usuariosFinal = [];
+      foreach($usuariosJSON as $json) {
+          $usuariosFinal[] = json_decode($json, true);
+        }
+        return $usuariosFinal;
+      }
+    public function nuevosId() {
+      if ($this->id == 'null'){
+        $usuarios= $this->traerTodos();
+      if (count($usuarios) == 0) {
+          return 1;
+        }else{
+        $elUltimo = array_pop($usuarios);
+        $id = $elUltimo["id"];
+        return $id + 1;
+      }
+      } 
+      $this->setId($id);
+    }
     public function setNewPassword($password) {
       $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
   }
-
-}
  ?>

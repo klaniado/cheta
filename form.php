@@ -1,5 +1,8 @@
 <?php
-require_once ("functions.php");
+spl_autoload_register(function ($nombreClase){
+  require_once ( "$nombreClase.php");
+});
+
 $nombre="";
 $apellido="";
 $mail="";
@@ -38,18 +41,19 @@ if ($_POST) {
 <?php include_once("head.php"); ?>
 <?php include_once("header.php"); ?>
   <body>
+    <h1>Registro</h1>
     <form class="" action="form.php" method="post" enctype="multipart/form-data"><br><br>
-    <label for="">nombre</label><br><br>
+    <label for="">Nombre</label><br><br>
     <input type="text" name="nombre" value="<?= $nombre ?>"><br><br>
-    <label for="">apellido</label><br><br>
+    <label for="">Apellido</label><br><br>
     <input type="text" name="apellido" value="<?= $apellido ?>"><br><br>
-    <label for="">edad</label><br><br>
+    <label for="">Edad</label><br><br>
     <input type="number" name="edad" value="<?= $edad ?>"><br> <br>
-    <label for="">mail</label><br><br>
+    <label for="">Mail</label><br><br>
     <input type="text" name="mail" value="<?= $mail ?>"><br><br>
-    <label for="">pais</label><br><br>
+    <label for="">Pais</label><br><br>
     <select name="pais">
-      <option value="">elegir</option>
+      <option value="">Elegir</option>
       <?php foreach ($paises as $codigo => $pais): ?>
         <?php if ($codigo == $codigoPais): ?>
           <option selected value="<?=$codigo  ?>"><?=$pais  ?></option>
@@ -58,13 +62,13 @@ if ($_POST) {
         <?php endif; ?>
       <?php endforeach; ?>
     </select><br><br>
-    <label for="">contraseña</label><br><br>
+    <label for="">Contraseña</label><br><br>
     <input type="password" name="pass" value=""><br><br>
-    <label for="">repetir contraseña</label><br><br>
+    <label for="">Repetir Contraseña</label><br><br>
     <input type="password" name="rpass" value=""><br><br>
-    <label for="">imagen de perfil</label><br><br>
+    <label for="">Imagen de Perfil</label><br><br>
     <input type="file" name="imgPerfil" value=""><br><br>
-    <input type="submit" name="enviar" value="enviar">
+    <input class="enviar" type="submit" name="enviar" value="enviar">
     </form>
     <div style="background-color:red; text-align:center;">
       <ul><?php  if (!empty($errores)) { ?>

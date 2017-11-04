@@ -1,12 +1,13 @@
 <?php $title="Login"; ?>
 <?php require_once("./head.php"); ?>
 <?php require_once("./header.php"); ?>
+<?php require_once("./functions.php"); ?>
 <?php
 
 $errores= [];
 
 if ($_POST) {
-  $errores = validarLogin($_POST);
+  $errores = loguear($_POST);
 
   if(empty($errores)) {
     $usuario = buscarPorMail($_POST["mail"]);
@@ -22,8 +23,8 @@ if ($_POST) {
 
   }
 }
-
-if (estaLogueado()) {
+$logueado=estaLogueado();
+if ($logueado) {
     header("location:perfilDeUsuario.php?id=" . $_SESSION["idUser"]);exit;
 }
 
@@ -39,18 +40,18 @@ if (estaLogueado()) {
         <h1>Login</h1>
         <br><br>        <br>
         <label for="">Email</label><br>
-        <input type="text" name="mail" value=""><br>
+        <input type="text" name="mail" value=""><br><br>
 
         <label for="">Contraseña</label><br>
         <input type="password" name="pass" value=""><br><br>
 
-        <input type="checkbox" name="recordame" value="">recordame <br>
+        <input class="recordarme" type="checkbox" name="" value="">Recordarme <br>
         <br>
-        <a href="#">olvide mi contraseña</a>
+        <a class="olvide" href="olvide.php">Olvide mi contraseña</a>
 
         <br><br><br>
 
-        <input type="submit" name="enviar" value="enviar">
+        <input class="enviar" type="submit" name="enviar" value="enviar">
       </form>
       <ul><?php  if (!empty($errores)) { ?>
         <?php foreach ($errores as $key => $value): ?>
