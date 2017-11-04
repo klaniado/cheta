@@ -1,10 +1,5 @@
-<!-- <?php require_once("soporte.php"); ?> -->
-<!-- <?php session_start();
+<?php require_once("soporte.php"); ?>
 
-if (isset($_COOKIE["idUser"])) {
-    $_SESSION["idUser"] = $_COOKIE["idUser"];
-}
- ?> -->
 <!DOCTYPE html>
 <html>
   <head>

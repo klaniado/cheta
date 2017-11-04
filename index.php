@@ -1,7 +1,6 @@
 <?php
   $title="Inicio";
-?>
-<?php require_once("./head.php") ?>
+  require_once("./head.php") ?>
   <body>
 
 
@@ -34,7 +33,7 @@
   </article>
 </section>
 <br><br><br>
-<?php if (isset($_SESSION["idUser"])) { ?>
+<?php if ($auth->estaLogueado()) { ?>
 <h6 class="botones"><a href="deslogueo.php">Cerrar sesion</a></h6><br><br><br>
 <?php } ?>
 <div class="medio">

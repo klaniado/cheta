@@ -1,65 +1,51 @@
-<?php $title="Login"; ?>
-<?php require_once("./head.php"); ?>
-<?php require_once("./header.php"); ?>
 <?php
+	$title="Login";
+	require_once("head.php");
+	require_once("soporte.php");
 
-$errores= [];
+	if ($auth->estaLogueado()) {
+		header("Location:Location:perfilDeUsuario.php?email=" .$_cookie["email"]);exit;
+	}
 
-if ($_POST) {
-  $errores = validarLogin($_POST);
+	if ($_POST) {
+		$arrayDeErrores = $validator->validarLogin($db);
 
-  if(empty($errores)) {
-    $usuario = buscarPorMail($_POST["mail"]);
-    loguear($usuario);
+		if (count($arrayDeErrores) == 0) {
+			$auth->loguear($_POST["email"]);
 
-    $id = $usuario["id"];
+			if (isset($_POST["recordame"])) {
+				setcookie("usuarioLogueado", $_POST["email"], time()+60*60*24*30);
+			}
 
-    if (isset($_POST["recordame"])) {
-      setcookie("idUser", $usuario["id"], time() + 60 * 60 * 24 * 30);
-    }
-
-      header("location:perfilDeUsuario.php?id=" . $id);exit;
-
-  }
-}
-
-if (estaLogueado()) {
-    header("location:perfilDeUsuario.php?id=" . $_SESSION["idUser"]);exit;
-}
-
-
-
+			header("Location:perfilDeUsuario.php?email=" . $_POST["email"]);
+		}
+	}
 
 ?>
-  <body>
-    <div class="medio">
 
-      <form class="" action="login.php" method="post">
+<?php include("header.php"); ?>
+		<div class="medio">
+			<h1>Login</h1>
+		<?php if(isset($arrayDeErrores)) : ?>
+			<ul class="errores">
+				<?php foreach($arrayDeErrores as $error) : ?>
+					<li>
+						<?=$error?>
+					</li>
+				<?php endforeach;?>
+			</ul>
+		<?php endif; ?>
+		<form action="login.php" method="POST">
+				<label>Email:</label><br>
+				<input class="form-control" type="text" name="email"><br>
 
-        <h1>Login</h1>
-        <br><br>        <br>
-        <label for="">Email</label><br>
-        <input type="text" name="mail" value=""><br>
+				<label>Password:</label><br>
+				<input class="form-control" type="password" name="password"><br>
 
-        <label for="">Contraseña</label><br>
-        <input type="password" name="pass" value=""><br><br>
+				 <input type="checkbox" name="recordame">Recordame<br>
 
-        <input type="checkbox" name="recordame" value="">recordame <br>
-        <br>
-        <a href="#">olvide mi contraseña</a>
+				<input class="enviar" type="submit" name="enviar" value="enviar">
 
-        <br><br><br>
-
-        <input type="submit" name="enviar" value="enviar">
-      </form>
-      <ul><?php  if (!empty($errores)) { ?>
-        <?php foreach ($errores as $key => $value): ?>
-          <li>En la posicion <?=$key?>, se encuentra el error <?= $value?> </li>
-        <?php endforeach; ?>
-      <?php } ?>
-      </ul>
-    </div>
-
-<?php require_once("./footer.php"); ?>
-</body>
-</html>
+		</form>
+	</div>
+<?php include("footer.php"); ?>

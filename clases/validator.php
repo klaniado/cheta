@@ -1,57 +1,112 @@
 <?php
-/**
- *
- */
+
+require_once("db.php");
+require_once("usuario.php");
+
 class Validator {
+  public function validarInformacion(db $db) {
+		$arrayDeErrores = [];
+
+		$nombreArchivo = $_FILES["avatar"]["name"];
+
+		$extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
+
+		if ($_FILES["avatar"]["error"] != UPLOAD_ERR_OK) {
+			$arrayDeErrores["avatar"] = "Ey, no se subio bien la foto";
+		}
+		else if ($extension != "jpg" && $extension != "jpeg" && $extension != "gif" && $extension != "png") {
+			$arrayDeErrores["avatar"] = "La foto no tiene un formato valido";
+		}
+
+		if ($_POST["nombre"] == "") {
+			$arrayDeErrores["nombre"] = "Che, el nombre esta mal";
+		}
+
+		if ($_POST["email"] == "") {
+			$arrayDeErrores["email"] = "Che, el email no esta";
+		}
+    else if(filter_var($_POST["email"],  FILTER_VALIDATE_EMAIL) == false) {
+      $arrayDeErrores["email"] = "Che, el FORMATO del mail esta mal";
+		}
+		else if ($db->traerPorEmail($_POST["email"]) != null) {
+			$arrayDeErrores["email"] = "El email esta repetido";
+		}
+
+		if (is_numeric($_POST["edad"]) == false) {
+			$arrayDeErrores["edad"] = "Che, pusiste cualquier cosa en la edad";
+		}
+
+		if (strlen($_POST["password"]) < 6) {
+			$arrayDeErrores["password"] = "Che, pone al menos 6 caracters de pass";
+		}
+		else if ($_POST["password"] != $_POST["cpassword"]) {
+			$arrayDeErrores["password"] = "Las contraseñas no verifican";
+		}
 
 
-  function validarInfo($algo){
-    $nombre = trim($algo['nombre']);
-    $apellido = trim($algo['apellido']);
-    $mail = trim($algo['mail']);
-    $pass = trim($algo['pass']);
-    $rpass = trim($algo['rpass']);
-    $errores = [];
-    if ($_POST) {
-      if ($_POST["nombre"]=="") {
-        $errores["nombre"] = "el nombre no puede estar vacio";
-      }
-      if ($_POST["apellido"]=="") {
-        $errores["apellido"] = "el apellido no puede estar vacio";
-      }
-      if ($_POST["mail"]=="") {
-        $errores["mail"] = "el mail no puede estar vacio";
-      }
-      if ($pass == '') {
-        $errores['pass'] = "tu contraseña no puede estar vacia";
-      }
-      if ($rpass == '') {
-        $errores['rpass'] = "repeti la contraseña";
-      }elseif ($pass != $rpass) {
-        $errores['pass'] = "tus contraseñas no coinciden";
-      }
-  }
-      return $errores;
-  }
 
-  function validarlogin($algo){
-    $errores = [];
-    $mail = trim($algo ["mail"]);
+		return $arrayDeErrores;
+	}
 
-    if (strlen($mail) == 0) {
-      $errores["mail"] = "introduci tu mail";
-    }elseif (!filter_var($mail,FILTER_VALIDATE_EMAIL)) {
-      $errores["mail"] = "introduci un mail valido";
-    }elseif (buscarPorMail($mail) == false) {
-  $errores["mail"] = "usuario inexistente";
-}else {
-  $usuario = buscarPorMail($mail);
-  if (password_verify($algo["pass"], $usuario["pass"]) == false) {
-    $errores["mail"] = "usuario o contraseña incorrecta";
-  }
+  public function validarLogin(db $db) {
+		$arrayDeErrores = [];
+
+
+		if ($_POST["email"] == "") {
+			$arrayDeErrores["email"] = "Che, el email no esta";
+		}
+    else if(filter_var($_POST["email"],  FILTER_VALIDATE_EMAIL) == false) {
+      $arrayDeErrores["email"] = "Che, el FORMATO del mail esta mal";
+		}
+		else if ($db->traerPorEmail($_POST["email"]) == null) {
+			$arrayDeErrores["email"] = "El email no esta en la base";
+		}
+		else {
+			$usuario = $db->traerPorEmail($_POST["email"]);
+      var_dump(password_verify($_POST["password"], $usuario->getPassword()), $usuario->getPassword());
+
+			if (password_verify($_POST["password"], $usuario->getPassword()) == false) {
+				$arrayDeErrores["password"] = "La contraseña no verifica";
+			}
+		}
+
+		return $arrayDeErrores;
+	}
+
+  public function validarEdicion(db $db, Usuario $usuario) {
+		$arrayDeErrores = [];
+
+		if ($_POST["nombre"] == "") {
+			$arrayDeErrores["nombre"] = "Che, el nombre esta mal";
+		}
+
+		if ($_POST["email"] == "") {
+			$arrayDeErrores["email"] = "Che, el email no esta";
+		}
+		else if(filter_var($_POST["email"],  FILTER_VALIDATE_Email) == false) {
+			$arrayDeErrores["email"] = "Che, el FORMATO del email esta mal";
+		}
+		else if ($db->traerPorEmail($_POST["email"]) != null && $_POST["email"] != $usuario->getEmail()) {
+			$arrayDeErrores["email"] = "El email esta repetido";
+		}
+
+		if (is_numeric($_POST["edad"]) == false) {
+			$arrayDeErrores["edad"] = "Che, pusiste cualquier cosa en la edad";
+		}
+
+    if (password_verify($_POST["oldpassword"], $usuario->getPassword()) == false ){
+      $arrayDeErrores["oldpassword"] = "Che, tu contraseña anterior esta mal";
+    }
+
+		if (strlen($_POST["password"]) < 6) {
+			$arrayDeErrores["password"] = "Che, pone al menos 6 caracters de pass";
+		}
+		else if ($_POST["password"] != $_POST["cpassword"]) {
+			$arrayDeErrores["password"] = "Las contraseñas no verifican";
+		}
+
+		return $arrayDeErrores;
+	}
 }
-  return $errores;
-}
-}
 
- ?>
+?>

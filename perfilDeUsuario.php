@@ -2,12 +2,12 @@
   $title="Perfil de usuario";
   require_once("./head.php");
 
-  if(!estaLogueado()) {
+  if(!$auth->estaLogueado()) {
     header("location:index.php");exit;
   }
-  $id = $_GET["id"];
-  $usuario = buscarPorId($id);
-  $file = glob('images/'.$usuario["nombre"]. $usuario["apellido"]. '.*');
+  $email = $_GET["email"];
+	$usuario = $db->traerPorEmail($email);
+  $file = glob('images/'. $usuario->getEmail() . '.*');
 
   $file = $file[0];
 
@@ -17,17 +17,15 @@
     <?php require_once("./header.php"); ?>
 
     <div class="container"><br><br><br><br>
-      <h1>Bienvenido al perfil de <?=$usuario["nombre"]?></h1>
-      <ul><pre>
-        <?php foreach($usuario as $propiedad => $valor) { ?>
-          <?php if ($propiedad != "id" && $propiedad != "pass") { ?>
-            <li>
-              <?=$propiedad?>: <?=$valor?>
-            </li>
-          <?php } ?>
-        <?php } ?>
-      </ul></pre>
-      <img width="50" src="<?=$file?>" alt="">
+      <h1>Bienvenido al perfil de <?=$usuario->getNombre()?></h1>
+      <ul>
+  			<li>Nombre: <?=$usuario->getNombre()?> </li>
+  			<li>Email: <?=$usuario->getEmail()?> </li>
+  			<li>Edad: <?=$usuario->getEdad()?> </li>
+  			<li>Pais: <?=$usuario->getPais()?> </li>
+  		</ul>
+
+      <img width="100" src="<?=$file?>" alt="">
 
     <br><br>
     <h6 class="botones"><a href="index.php">Ir al inicio</a></h6>

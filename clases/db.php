@@ -1,19 +1,11 @@
 <?php
-require_once 'usuario.php';
+
+require_once("usuario.php");
+
 abstract class db {
-
-abstract public function guardarUsuario($usuario);
-
-abstract public function traerTodos();
-
-abstract public function traerMail($email);
-
+  public abstract function traerPorEmail($email);
+  public abstract function traerTodosLosUsuarios();
+  public abstract function guardarUsuario(Usuario $usuario);
 }
 
-
-
-
-
-
-
- ?>
+?>
