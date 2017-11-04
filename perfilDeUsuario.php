@@ -1,6 +1,7 @@
 <?php
   $title="Perfil de usuario";
   require_once("./head.php");
+  require_once("./functions.php");
 
   if(!$auth->estaLogueado()) {
     header("location:index.php");exit;

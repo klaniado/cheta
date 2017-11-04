@@ -1,15 +1,16 @@
 *{
+  padding: 0;
   box-sizing: border-box;
   border: 0;
-  text-decoration: none;
 }
 body{
   width: 100%;
-	margin: 0;
-	font-size: 100%;
+  margin: 0;
+  font-size: 100%;
   font-family: sans-serif;
   background-image: url("../images/fondo.jpg");
 }
+
 .container{
 
   margin: 0;
@@ -62,7 +63,7 @@ body{
 }
 /************MENU-HEADER************/
 #lmen{
-
+    text-decoration: none;
     background-color: rgb(249, 142, 0);
     display: flex;
     border-radius: 50px;
@@ -80,45 +81,51 @@ body{
   display: block;
 }
 .menu-nav{
-  position: absolute;
+  position: relative;
   display: none;
   width: 100%;
   text-align: center;
   background-color: #fff;
+
 }
-.headerli{
-  height: 46px;
-  border-radius: 20px;
-}
-.menu-nav li:hover{
-  background-color: rgb(71, 231, 6);
-}
-.h6header{
-  display: inline-block;
-  margin-top: -30px;
-  font-size: 1.4em;
-  padding: 40px 10px;
-}
-.menu-nav a{
-  display: inline-block;
-  color: #fff;
-  margin-top: 5px;
+.menu-nav li{
   list-style: none;
   align-items: center;
   width: 100%;
   height: 50px;
   background-color: rgb(249, 142, 0);
   border: 2px solid #fff;
-  border-radius: 21px;
+  border-radius: 20px;
+  overflow: hidden;
 
 }
-.menu-nav i{
-    font-size: 1.4em;
+.menu-nav li:hover{
+  background-color: rgb(71, 231, 6);
+  cursor: pointer; cursor: hand
+  
 }
-.menu-nav .menu-pregfre{
+.menu-nav li .aheader{
+  display: inline-block;
+  font-size: 1.3em;
+  width:100%;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 10%;
+  margin-top: 0px;
+  border-radius: 40px; 
+
+  
+
+}
+
+.menu-nav li .menu-pregfre{
+  display: inline-block;
+  width: 100%;
   margin-top: 7px;
   font-size: 1.4em;
-  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px 10%;
 
 
 }
@@ -248,14 +255,20 @@ article a .img-mac{
   background-color:rgb(255, 214, 0);
   color: #000;
 }
+form{
+  text-align: center;
+}
 form label{                   /*La clase .form aplica a cualquier formulario con label e input*/
-  font-size: 1.5em;            /*EJ: Login, contacto, registro, etc*/
+  font-size: 1.5em;
+  font-family: sans-serif;  
+  font-weight: bolder;          /*EJ: Login, contacto, registro, etc*/
 
 }
 form input,form textarea , form select{
   width: 60%;
   height: 40px;
   border: 2px solid #000;
+  font-size: 1.3em;
 }
 form textarea{
   height: 120px;
@@ -307,6 +320,12 @@ form .botones a:hover{
   display: inline-block;
   width: 90%;
 }
+.recordarme{
+  position: relative;
+  top:12px;
+  width: 2%;
+
+}
 .tarjetas{
   width: 90%;
   max-width: 750px;
@@ -321,6 +340,9 @@ form .botones a:hover{
   font-size: 1.4em;
   color: black;
   background-color: white;
+}
+.olvide:hover{
+  color: red;
 }
 /****************FOOTER***************/
 footer{
@@ -504,7 +526,8 @@ footer a:hover{
     .menu-nav li .menu-pregfre{
       display: inline-block;
       font-size: 1.27em;
-      margin-top: 10px;
+      padding: 11px 2%;
+
     }
     footer a{
       padding: 1% 32%;

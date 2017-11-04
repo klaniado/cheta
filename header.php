@@ -9,42 +9,42 @@
       <label for="menu"><i id="lmen" class="fa fa-list" aria-hidden="true">Menú</i></label>
       <input id="menu" type="checkbox" name="" value="">
       <nav class="menu-nav">
-            <a   href="index.php">
-            <li class="headerli">
+          <li >
+            <a class="aheader" href="index.php">
               <i class="fa fa-home"></i>
-              <h6 class="h6header">Home</h6>
-              </li>
+              Home
             </a>
-            <a   href="categorias.php">
-          <li class="headerli">
-              <i class="fa fa-bars" aria-hidden="true"></i>
-              <h6 class="h6header">Categorías</h6>
           </li>
-        </a>
-            <a   href="productos.php">
-              <li class="headerli">
+          <li >
+            <a  class="aheader" href="categorias.php">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+              Categorías
+            </a>
+          </li>
+          <li >
+            <a  class="aheader" href="productos.php">
               <i class="fa fa-mobile" aria-hidden="true"></i>
-             <h6 class="h6header">Productos</h6>
-           </li>
+             Productos
             </a>
-            <a   href="login.php">
-              <li class="headerli">
+          </li>
+          <li >
+            <a  class="aheader" href="login.php">
               <i class="fa fa-user-circle" aria-hidden="true"></i>
-              <h6 class="h6header">Cuenta</h6>
-            </li>
+              Cuenta
             </a>
-            <a   href="contacto.php">
-              <li class="headerli">
+          </li>
+          <li >
+            <a  class="aheader" href="contacto.php">
               <i class="fa fa-phone" aria-hidden="true"></i>
-              <h6 class="h6header">Contacto</h6>
-            </li>
+              Contacto
             </a>
-            <a  class="menu-pregfre" href="indexpregfrec.php">
-              <li class="headerli">
+          </li>
+          <li >
+            <a class="menu-pregfre" href="indexpregfrec.php">
               <i class="fa fa-question-circle" aria-hidden="true"></i>
-                <h6 class="h6header">FAQs</h6>
-            </li>
+              Preguntas Frecuentes
             </a>
+          </li>
       </nav>
     </div>
     </header>
